@@ -1,57 +1,55 @@
-# Webpack setting template
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-Webpack template to use as a starting point in web projects.
+# To-do list
 
-## Features
+> In this project, I do the structure of a To Do list.
 
-The template is made up of:
-- A *index.html* file has only the basic markup.
-- A *style.css* file with only background color.
-- A *index.js* file that imports *lodash* module and *style.css*, and displays a message.
-- A *package.json* file that list all needed devDependencies.
-- A *webpack.config.js* file with basic settings that will be used to generate the web project's production files inside of *dist* folder.
+![todolist](https://user-images.githubusercontent.com/91301423/149229839-5daf0dbf-daf9-4d8f-b1e3-90b6a346aa64.png)
 
 
 ## Built With
 
-- HTML / CSS / Javascript
+- HTML
+- CSS
+- JS
+- Webpack
+
+## Live Demo
+
+[Live Demo Link](https://fherrerao.github.io/To-Do-list/)
 
 
 ## Getting Started
 
-
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+WebPack package installing
 
-- Have a computer
+### Setup
+Clon the repository https://github.com/fherrerao/To-Do-list.
 
 ### Install
+run the following comands:
+npm install
 
-- Install git on your local computer.
-- Clone this repository to your local computer. Choose the location you prefer.
-- Run the command *npm install* to install all project's dependencies.
 
-### Deployment
-
-- Run the command line *npm run start*.
-- The basic template will automatically open the *index.html* file in a browser.
-
+### Usage
+Run the comand npm run start to get a working environment with the project
 
 ## Authors
 
-👤 **Gabriela Sánchez Espirilla**
+👤 **Fernando Herrera**
 
-- GitHub: [@gabyse1](https://github.com/gabyse1)
-- Twitter: [@gabyse0](https://twitter.com/gabyse0)
-- LinkedIn: [Gabriela](https://www.linkedin.com/in/gabriela-s%C3%A1nchez-espirilla-83011b225/)
-
+- GitHub: [@fherrerao](https://github.com/fherrerao)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/fernando-herrera-25a6361b2/)
+- Twitter: [@fherrera0206](https://twitter.com/fherrera0206)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/fherrerao/To-Do-list/issues).
 
 ## Show your support
 
@@ -59,7 +57,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Guide: [Webpack](https://webpack.js.org/guides/getting-started/#basic-setup)
+- I used icons from [Boxicons](https://boxicons.com/)
 
 ## 📝 License
 
