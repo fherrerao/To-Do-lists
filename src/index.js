@@ -1,37 +1,62 @@
 import './style.css';
 
-const tasks = [
-  {
-    description: 'Study webpack',
+let tasks = [];
+
+const btn = document.querySelector('.btn-clear');
+const listContainer = document.querySelector('.list-container');
+
+const createTask = (task) => {
+  let objTasks = {
+    description: task,
     completed: false,
-    index: 0,
-  },
-  {
-    description: 'Review classes',
-    completed: true,
-    index: 1,
-  },
-  {
-    description: 'Study objects',
-    completed: false,
-    index: 2,
-  },
-];
+    index: tasks.length+1
+  }
+  tasks.push(objTasks);  
+  return objTasks;
+}
+
+const setLocalStorage = () => {
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+  showTasks();
+}
+
+btn.addEventListener('click',() => {  
+  const inputDescription = document.querySelector('.add').value;
+  createTask(inputDescription);
+  setLocalStorage();  
+});
 
 const itemsContainer = document.querySelector('.list-container');
 
-const createTasks = () => {
-  for (let i = 0; i < tasks.length; i += 1) {
-    const items = document.createElement('li');
-    items.classList.add('item-list');
-
-    items.innerHTML = `
-      <input type="checkbox" id="id-${tasks[i].index}">
-      <label for="id-${tasks[i].index}">${tasks[i].description}</label>
-      <box-icon class="icon" name='dots-vertical-rounded'></box-icon>`;
-
-    itemsContainer.appendChild(items);
+const showTasks = () => {
+  listContainer.innerHTML = '';
+  
+  tasks = JSON.parse(localStorage.getItem('tasks'));
+  if(!tasks){
+    tasks = [];    
+  }
+  else {
+    tasks.forEach(element => {
+      const items = document.createElement('li');
+      items.classList.add('item-list');
+      items.id=element.index
+      items.innerHTML = `
+        <input type="checkbox" id="id-${element.index}">
+        <label>${element.description}</label>
+        <box-icon class="icon" name='dots-vertical-rounded'></box-icon>`;
+      itemsContainer.appendChild(items);
+    });
   }
 };
 
-document.addEventListener('DOMContentLoaded', createTasks());
+document.addEventListener('DOMContentLoaded', showTasks());
+
+const itemList = document.querySelectorAll('.item-list');
+itemList.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    const deleteTask = tasks.splice(item.id-1,1);
+    //setLocalStorage()
+    console.log(tasks);
+  })
+});
