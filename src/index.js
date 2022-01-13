@@ -1,10 +1,33 @@
-import _ from 'lodash';
 import './style.css';
 
-const component = () => {
-  const element = document.createElement('div');
-  element.innerHTML = _.join(['This is a', 'template'], ' ');
-  return element;
-};
+const tasks = [
+  {
+    description: 'Study webpack',
+    completed: false,
+    index: 0,
+  },
+  {
+    description: 'Review classes',
+    completed: true,
+    index: 1,
+  },
+  {
+    description: 'Study objects',
+    completed: false,
+    index: 2,
+  },
+];
 
-document.body.appendChild(component());
+const itemsContainer = document.querySelector('.list-container');
+
+for (let i = 0; i < tasks.length; i += 1) {
+  const items = document.createElement('li');
+  items.classList.add('item-list');
+
+  items.innerHTML = `
+    <input type="checkbox" id="id-${tasks[i].index}">
+    <label for="id-${tasks[i].index}">${tasks[i].description}</label>
+    <box-icon class="icon" name='dots-vertical-rounded'></box-icon>`;
+
+  itemsContainer.appendChild(items);
+}
