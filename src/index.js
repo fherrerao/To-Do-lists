@@ -20,14 +20,18 @@ const tasks = [
 
 const itemsContainer = document.querySelector('.list-container');
 
-for (let i = 0; i < tasks.length; i += 1) {
-  const items = document.createElement('li');
-  items.classList.add('item-list');
+const createTasks = () => {
+  for (let i = 0; i < tasks.length; i += 1) {
+    const items = document.createElement('li');
+    items.classList.add('item-list');
 
-  items.innerHTML = `
-    <input type="checkbox" id="id-${tasks[i].index}">
-    <label for="id-${tasks[i].index}">${tasks[i].description}</label>
-    <box-icon class="icon" name='dots-vertical-rounded'></box-icon>`;
+    items.innerHTML = `
+      <input type="checkbox" id="id-${tasks[i].index}">
+      <label for="id-${tasks[i].index}">${tasks[i].description}</label>
+      <box-icon class="icon" name='dots-vertical-rounded'></box-icon>`;
 
-  itemsContainer.appendChild(items);
-}
+    itemsContainer.appendChild(items);
+  }
+};
+
+document.addEventListener('DOMContentLoaded', createTasks());

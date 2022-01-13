@@ -8,17 +8,11 @@
     "start": "webpack && webpack serve --open",
     "build": "webpack"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gabyse1/webpack-template.git"
-  },
+  
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gabyse1/webpack-template/issues"
-  },
-  "homepage": "https://github.com/gabyse1/webpack-template#readme",
+  "license": "ISC",  
+ 
   "dependencies": {
     "lodash": "^4.17.21"
   },
