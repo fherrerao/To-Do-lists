@@ -46,12 +46,12 @@ label.forEach((item) => {
 const inputDescription = document.querySelector('.add');
 const enter = document.querySelector('.btn-enter');
 enter.addEventListener('click', () => {
-  if(inputDescription.value !==''){
+  if (inputDescription.value !== '') {
     Collection.createTask(inputDescription.value);
     Collection.setLocalStorage();
     window.location.reload();
-  }  
-})
+  }
+});
 
 window.addEventListener('keydown', (e) => {
   if (e.keyCode === 13 && inputDescription.value !== '') {
