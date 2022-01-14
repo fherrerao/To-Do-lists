@@ -53,6 +53,7 @@ body {
 .label {
   padding: 5px;
   font-size: 15px;
+  width: 100%;
 }
 
 .item-list input {
@@ -96,6 +97,11 @@ body {
   display: none;
 }
 
-.d-block {
-  display: block;
+.enter {
+  display: flex;
+  align-items: center;
+}
+
+.enter:hover {
+  cursor: pointer;
 }
