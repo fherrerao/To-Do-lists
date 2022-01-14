@@ -50,6 +50,11 @@ body {
   font-size: 14px;
 }
 
+.label {
+  padding: 5px;
+  font-size: 15px;
+}
+
 .item-list input {
   margin-right: 10px;
 }
@@ -77,4 +82,20 @@ body {
 
 .icon:hover {
   cursor: crosshair;
+}
+
+.trash-icon:hover {
+  cursor: pointer;
+}
+
+.item-list.activated {
+  background-color: brown;  
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
 }
