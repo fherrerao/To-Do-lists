@@ -2,7 +2,7 @@ import './style.css';
 
 let tasks = [];
 
-const btn = document.querySelector('.btn-clear');
+
 const listContainer = document.querySelector('.list-container');
 
 const createTask = (task) => {
@@ -16,16 +16,8 @@ const createTask = (task) => {
 }
 
 const setLocalStorage = () => {
-  localStorage.setItem('tasks', JSON.stringify(tasks));
-  showTasks();  
+  localStorage.setItem('tasks', JSON.stringify(tasks));  
 }
-
-btn.addEventListener('click',() => {  
-  // const inputDescription = document.querySelector('.add').value;
-  // createTask(inputDescription);
-  // setLocalStorage(); 
-  // location.reload();
-});
 
 const itemsContainer = document.querySelector('.list-container');
 
@@ -52,8 +44,7 @@ const showTasks = () => {
   }
 };
 
-const deleteTask = (del) => {
-  
+const deleteTask = (del) => {  
   let indexArray;
   tasks.forEach((element, index) => {    
     if(element.description === del){
@@ -74,25 +65,45 @@ for (let i=0; i<tasks.length; i += 1){
 }
 
 const label = document.querySelectorAll('.label');
-
 label.forEach(item => {
   item.addEventListener('click', (e) => {  
     e.preventDefault();
     let task = e.currentTarget.innerHTML;    
-    let index = e.currentTarget.nextSibling.nextSibling.id;
-    console.log(e.currentTarget.nextSibling.nextSibling.id);
+    let index = e.currentTarget.nextSibling.nextSibling.id;    
     trashIcon[index].classList.remove('d-none')
     trashIcon[index].addEventListener('click', () => {
       deleteTask(task);
-      location.reload();
+      location.reload();      
     })
     iconDots[index].classList.add('d-none')            
   });
 })
+
+label.forEach(item => {
+  item.addEventListener('blur', (e) => {  
+    e.preventDefault();    
+    let index = e.currentTarget.nextSibling.nextSibling.id;    
+    setTimeout(() => {
+      trashIcon[index].classList.add('d-none')    
+      iconDots[index].classList.remove('d-none') 
+    }, 90);
+                   
+  });
+})
+
+label.forEach(item => {
+  item.addEventListener('input', (e) => {
+    console.log(item.innerHTML);
+    let index = e.currentTarget.nextSibling.nextSibling.id;
+    tasks[index].description = item.innerHTML
+    setLocalStorage();    
+  })  
+})
+
+
 const inputDescription = document.querySelector('.add');
 window.addEventListener('keydown', (e) => {
   if (e.keyCode === 13 && inputDescription.value !== "") {    
-    
     createTask(inputDescription.value);
     setLocalStorage(); 
     location.reload();
