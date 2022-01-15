@@ -1,12 +1,16 @@
 import './style.css';
 import Collection from './functions.js';
+import clear from './status.js';
 
 document.addEventListener('DOMContentLoaded', Collection.showTasks());
 
 const trashIcon = document.querySelectorAll('.trash-icon');
 const iconDots = document.querySelectorAll('.icon');
+const checkBox = document.querySelectorAll('.check');
+
 for (let i = 0; i < Collection.tasks.length; i += 1) {
   iconDots[i].setAttribute('id', i);
+  checkBox[i].setAttribute('id', i);
 }
 
 const label = document.querySelectorAll('.label');
@@ -51,6 +55,26 @@ enter.addEventListener('click', () => {
     Collection.setLocalStorage();
     window.location.reload();
   }
+});
+
+const btnClear = document.querySelector('.btn-clear');
+
+btnClear.addEventListener('click', () => {
+  checkBox.forEach(() => {
+    clear();
+  });
+});
+
+checkBox.forEach((item) => {
+  item.addEventListener('change', (e) => {
+    if (item.checked === true) {
+      Collection.tasks[e.target.id].completed = true;
+      Collection.setLocalStorage();
+    } else {
+      Collection.tasks[e.target.id].completed = false;
+      Collection.setLocalStorage();
+    }
+  });
 });
 
 window.addEventListener('keydown', (e) => {
