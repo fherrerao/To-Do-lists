@@ -1,4 +1,4 @@
-import Collection from "./functions.js";
+import Collection from './functions.js';
 
 const clear = () => {
   const result = Collection.tasks.filter((e) => e.completed === false);

@@ -1,5 +1,5 @@
-const listContainer = document.querySelector(".list-container");
-const itemsContainer = document.querySelector(".list-container");
+const listContainer = document.querySelector('.list-container');
+const itemsContainer = document.querySelector('.list-container');
 
 export default class Collection {
   static tasks = [];
@@ -15,14 +15,14 @@ export default class Collection {
   };
 
   static showTasks = () => {
-    listContainer.innerHTML = "";
-    Collection.tasks = JSON.parse(localStorage.getItem("tasks"));
+    listContainer.innerHTML = '';
+    Collection.tasks = JSON.parse(localStorage.getItem('tasks'));
     if (!Collection.tasks) {
       Collection.tasks = [];
     } else {
       Collection.tasks.forEach((element) => {
-        const items = document.createElement("li");
-        items.classList.add("item-list");
+        const items = document.createElement('li');
+        items.classList.add('item-list');
         items.id = element.index - 1;
         items.innerHTML = `
           <input type="checkbox" class="check">        
@@ -47,6 +47,6 @@ export default class Collection {
   };
 
   static setLocalStorage = () => {
-    localStorage.setItem("tasks", JSON.stringify(Collection.tasks));
+    localStorage.setItem('tasks', JSON.stringify(Collection.tasks));
   };
 }
