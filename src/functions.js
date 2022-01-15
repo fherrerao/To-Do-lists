@@ -25,7 +25,7 @@ export default class Collection {
         items.classList.add('item-list');
         items.id = element.index - 1;
         items.innerHTML = `
-          <input type="checkbox" id="id-${element.index}">        
+          <input type="checkbox" class="check">        
           <p class="label" contenteditable="true">${element.description}</p>
           <box-icon class="icon" name='dots-vertical-rounded'></box-icon>
           <box-icon class="trash-icon d-none" name='trash'></box-icon>`;
