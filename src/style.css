@@ -1,107 +1,77 @@
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
+  font-size: 62.5%; /* 1rem = 10 px */
 }
 
 *,
 *::before,
 *::after {
   box-sizing: inherit;
-  margin: 0;
-  padding: 0;
 }
 
 body {
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background: linear-gradient(to bottom, brown, #19191a);
+  transition: all 0.4s ease-out;
 }
 
-.border {
-  text-align: center;
-  border: solid 1px black;
-  padding: 10px;
-  width: 20%;
+.container {
+  max-width: 90%;
+  width: 90rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: rgb(0 0 0 / 80%) 0 8px 18px;
+}
+
+.add-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  column-gap: 2rem;
+  width: 100%;
+  background-color: brown;
+}
+
+.enter {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.add {
+  width: 100%;
+  border: none;
 }
 
 .list-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-.add-list {
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
+  padding: 0 2rem;
 }
 
 .item-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  border-top: 1px solid rgb(212, 206, 206);
-  padding: 10px 0;
-  list-style: none;
-}
-
-.item-list label {
-  font-size: 14px;
 }
 
 .label {
-  padding: 5px;
-  font-size: 15px;
-  width: 100%;
-}
-
-.item-list input {
-  margin-right: 10px;
-}
-
-.add {
-  margin: 10px 0;
-  width: 100%;
-  border: none;
-  padding: 5px;
+  width: 10rem;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 1.5rem;
 }
 
 .btn-clear {
-  margin: 10px 0;
   border: none;
-  font-weight: 700;
-  background-color: rgb(240, 238, 238);
   width: 100%;
-  padding: 10px;
-}
-
-.btn-clear:hover,
-.update-icon {
-  cursor: pointer;
-}
-
-.icon:hover {
-  cursor: crosshair;
-}
-
-.trash-icon:hover {
-  cursor: pointer;
-}
-
-.item-list.activated {
-  background-color: brown;
-}
-
-.d-none {
-  display: none;
-}
-
-.enter {
-  display: flex;
-  align-items: center;
-}
-
-.enter:hover {
-  cursor: pointer;
 }
