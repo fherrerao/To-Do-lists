@@ -50,6 +50,7 @@ body {
 .add {
   width: 100%;
   border: none;
+  border-bottom: 1px solid black;
 }
 
 .list-container {
@@ -65,13 +66,29 @@ body {
   align-items: center;
 }
 
+.item-list:nth-of-type(2n) {
+  background-color: rgba(95, 3, 3, 0.1);
+}
+
 .label {
-  width: 10rem;
+  width: 20rem;
   font-family: "Gill Sans", sans-serif;
   font-size: 1.5rem;
+  padding: 0.8rem;
 }
 
 .btn-clear {
   border: none;
   width: 100%;
+  padding: 1rem 0;
+  margin-top: 3rem;
+}
+
+.btn-clear:hover,
+.btn-enter:hover {
+  cursor: pointer;
+}
+
+.d-none {
+  display: none;
 }
