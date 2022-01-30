@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
-    <title>To Do list</title>
-  <script defer src="index.bundle.js"></script></head>
 
-  <body>
-    <main class="border">
-      <div class="add-list">
-        <h1>Today's To Do</h1>
-        <box-icon class="update-icon" name="refresh"></box-icon>
-      </div>
-      <div class="enter">
-        <input class="add" type="text" placeholder="Add to list ..." />
-        <box-icon class="btn-enter" name="right-arrow-alt"></box-icon>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+  <title>To Do list</title>
+<script defer src="index.bundle.js"></script></head>
 
-      <ul class="list-container"></ul>
-      <button class="btn-clear">Clear all completed</button>
-    </main>
-  </body>
+<body>
+  <div class="container">
+
+    <div class="add-list">
+      <h1>Today's To Do</h1>
+      <box-icon class="update-icon" name="refresh"></box-icon>
+    </div>
+    <div class="enter">
+      <input class="add" type="text" placeholder="Add to list ..." />
+      <box-icon class="btn-enter" name="right-arrow-alt"></box-icon>
+    </div>
+    <ul class="list-container"></ul>
+    <button class="btn-clear">Clear all completed</button>
+
+  </div>
+
+
+</body>
+
 </html>
